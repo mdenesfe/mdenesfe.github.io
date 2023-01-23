@@ -91,36 +91,10 @@
             <div class="col-md-7">
               <h3 class="mb-4">Football Simulation</h3>
               <p>
-                # Football Simulator
-
-This code snippet reads the players of two teams entered by the user, calculates the player scores of the teams and simulates a football match.
-
-## Getting Started
-
-1. First, the user enters the names of two teams.
-2. Reads the players to create the teams.
-3. Calculates the attack, defense and midfield scores of each team.
-4. Takes the average score of the teams.
-5. Applies a random average with normal distribution and determines the score of the match.
-6. During the match, the scorer is determined for each goal and the fatigue levels of the players are updated.
-7. At the end of the match, the score is printed on the screen.
-
-## Requirements
-
-The only requirement for this code snippet is python 3.x.
-
-## Running
-
-To run this code snippet, you only need to run `python main.py` command in your console or terminal.
-
-## Contributors
-- [mdenesfe](https://github.com/mdenesfe)
-
-## Notes
-
-- The player information is read from the players.csv file based on the team names entered by the user, sufficient player information must be present in this file.
-- The fatigue levels of the players are increased after each goal, but there is no possibility of substituting players like in a real football game.
-- The score is determined randomly and factors such as tactics, player performances do not affect it as they would in a real football game.
+                This code appears to simulate a soccer match between two teams. It does this by reading in the team data from two text files, each containing a list of players with their respective attributes (name, age, number, position, attack, defense, midfield).</p>
+                <p>The code calculates the form factor for each player, which is a random value between 0 and 1. This value is used to scale the attack, defense, and midfield attributes of each player.</p>
+                <p>The code then calculates the attack, defense, and midfield attributes of each team by adding up the respective attributes of all the players on that team. It also applies an age factor to each player, which is a value between 0.7 and 1 that is based on the player's age. This age factor is used to further scale the attack, defense, and midfield attributes of each player.</p>
+                <P>Finally, the code calculates the score of the match by comparing the attack, defense, and midfield attributes of the two teams. It prints the final score of the match as well as the name of the winning team.</p>
               </p>
               
             </div>
