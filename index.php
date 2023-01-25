@@ -114,36 +114,6 @@
             <span class="gsap-reveal"><img src="images/divider.png" alt="divider" width="76"></span>
           </div>
 
-          <?php
-
-          // Medium RSS beslemesi URL'si
-          $feed_url = 'https://medium.com/feed/@mdenesfe';
-
-          // Besleme içeriğini al
-          $feed_content = file_get_contents($feed_url);
-
-          // Besleme içeriğini SimpleXML nesnesine dönüştür
-          $feed_xml = simplexml_load_string($feed_content);
-
-          // Gönderileri döngü ile gez
-          foreach ($feed_xml->channel->item as $item) {
-              // Gönderi başlığını al
-              $title = $item->title;
-              // Gönderi içeriğini al
-              $content = $item->children('content', true)->encoded;
-              // Gönderi URL'sini al
-              $url = $item->link;
-              // Gönderi tarihini al
-              $date = $item->pubDate;
-
-              // Gönderi bilgilerini ekrana yazdır
-              echo '<h2><a href="' . $url . '">' . $title . '</a></h2>';
-              echo '<p>' . $content . '</p>';
-              echo '<p>Yayın tarihi: ' . $date . '</p>';
-          }
-
-          ?>
-
          <!-- <div class="row gutter-v4 align-items-stretch">
             <div class="col-sm-6 col-md-6 col-lg-8 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
 
