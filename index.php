@@ -114,8 +114,37 @@
             <span class="gsap-reveal"><img src="images/divider.png" alt="divider" width="76"></span>
           </div>
 
-          
-          <div class="row gutter-v4 align-items-stretch">
+          <?php
+
+          // Medium RSS beslemesi URL'si
+          $feed_url = 'https://medium.com/feed/@kullaniciadi';
+
+          // Besleme içeriğini al
+          $feed_content = file_get_contents($feed_url);
+
+          // Besleme içeriğini SimpleXML nesnesine dönüştür
+          $feed_xml = simplexml_load_string($feed_content);
+
+          // Gönderileri döngü ile gez
+          foreach ($feed_xml->channel->item as $item) {
+              // Gönderi başlığını al
+              $title = $item->title;
+              // Gönderi içeriğini al
+              $content = $item->children('content', true)->encoded;
+              // Gönderi URL'sini al
+              $url = $item->link;
+              // Gönderi tarihini al
+              $date = $item->pubDate;
+
+              // Gönderi bilgilerini ekrana yazdır
+              echo '<h2><a href="' . $url . '">' . $title . '</a></h2>';
+              echo '<p>' . $content . '</p>';
+              echo '<p>Yayın tarihi: ' . $date . '</p>';
+          }
+
+          ?>
+
+         <!-- <div class="row gutter-v4 align-items-stretch">
             <div class="col-sm-6 col-md-6 col-lg-8 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
 
               <a href="football-simule.html" class="grid-item blog-item w-100 h-100">
@@ -142,7 +171,7 @@
                 <img src="images/tic-tac-toe.jpg" class="lazyload" alt="Image" />
               </a>
             </div>
-            <!-- <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
+             <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
               <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
                 <div class="overlay">
                   <div class="portfolio-item-content">
