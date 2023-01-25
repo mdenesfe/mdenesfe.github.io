@@ -117,7 +117,7 @@
           <?php
 
           // Medium RSS beslemesi URL'si
-          $feed_url = 'https://medium.com/feed/@kullaniciadi';
+          $feed_url = 'https://medium.com/feed/@mdenesfe';
 
           // Besleme içeriğini al
           $feed_content = file_get_contents($feed_url);
